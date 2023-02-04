@@ -1946,8 +1946,7 @@ void Analyse_des_arguments(char *mode, int decroissant, char *fichier_entree, ch
 {
     if (strcmp(mode, "-t1") == 0 && (mode_sort == NULL || mode_sort == "avl"))
     { // avl et t1
-        // Tri_Temp1AVL(decroissant,fichier_entree,fichier_sortie);
-        printf("pas encore mis en place");
+        tri_t1_avl(fichier_entree,fichier_sortie,decroissant);
     }
     else if (strcmp(mode, "-t1") == 0 && mode_sort == "abr")
     { // abr et t1
@@ -2079,7 +2078,7 @@ void Analyse_des_arguments(char *mode, int decroissant, char *fichier_entree, ch
         printf("pas encore mis en placeee");
     }
 }
-/*
+
 avl* creationavl(char* l, char* type)
 {
 	verifpchar(l);
@@ -2388,7 +2387,7 @@ avl* construireavl(char* nomf, int idx, char* type)
 
 		//ligne = prendreligne(&verif, len, fichier);
 
-		printf("\n\n\n'%s' \n\n\n", ligne);
+		
 		
 		//puis on ajoute la ligne a l'avl
 		a = insertavl_appel(a, ligne, idx, type);
@@ -2669,7 +2668,7 @@ avl* egalavl_p1(avl* a, avl* b, int i)
 	int verif_b = (b->ligne[i] != NULL && strcmp(b->ligne[i], " ")); // si il y a une valeur dans b
 	if(verif_a && verif_b)
 	{
-		printf("\n  a->ligne[i] = %s   \n", a->ligne[i]);
+		
 		int abs_a = atoi(a->ligne[i]);
 		if(abs_a<0)
 			abs_a= 0-abs_a;
@@ -3107,7 +3106,7 @@ avl* egalavl_t1(avl* a, avl* b, int i)
 	
 	//printf("\n\n\n apres a->ligne[i] = %s   \n\n\n\n", a->ligne[i]);
 	
-	int verif1_a = (a->ligne[i+1] != NULL || strcmp(a->ligne[i+1], " ")); // si il y a une valeur minimum en a
+	int verif1_a = (a->ligne[i+1] != NULL && strcmp(a->ligne[i+1], " ")); // si il y a une valeur minimum en a
 	int verif1_b = strcmp(b->ligne[i], " "); // si il y a une valeur dans b
 
 	if(verif1_a && verif1_b)	// si il y a des valeurs dans a et b on choisit le minimun
@@ -3116,7 +3115,7 @@ avl* egalavl_t1(avl* a, avl* b, int i)
 		sprintf(b->ligne[i+1], "%d", atoi(b->ligne[i]));
 
 	
-	int verif2_a = (a->ligne[i+2] != NULL || strcmp(a->ligne[i+1], " ")); // si il y a une valeur max en a
+	int verif2_a = (a->ligne[i+2] != NULL && strcmp(a->ligne[i+1], " ")); // si il y a une valeur max en a
 	int verif2_b = strcmp(b->ligne[i], " "); // si il y a une valeur dans b
 
 	if(verif2_a && verif2_b)	// si il y a des valeurs dans a et b on choisit le maximum
@@ -3595,5 +3594,3 @@ int min2(int a, int b)
 	else
 		return b;
 }
-
-*/
