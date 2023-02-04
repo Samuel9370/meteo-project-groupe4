@@ -206,7 +206,7 @@ int TrouveLigne(char * line);
 void Tri_HumiditeTAB(int decroissant, char * fichier_entree, char * fichier_sortie);
 void LectureLignes(char * fichier_entree);
 void EcrireDansLigne(char * fichier_sortie);
-/*
+
 //avl
 void verifpchar(char* c);
 void verifpint(int* n);
@@ -312,4 +312,4 @@ int tri_m2_avl(char* input_fich, char* output_fich);
 int infstrictavl_m1(avl* a, avl* b, int idx);
 int infstrictavl_m2(avl* a, avl* b, int idx);
 avl* egalavl_m(avl* a, avl* b, int i);
-avl* finiravl_m(avl* a, int i); */
+avl* finiravl_m(avl* a, int i); 
